@@ -8,9 +8,12 @@
 
 a {
   font-size: larger;
-  color: white;
   text-decoration: none;
   padding: 3px 5px;
+}
+
+.navbar > a {
+  color: white;
 }
 
 .navbar {

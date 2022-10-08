@@ -3,9 +3,9 @@ import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 
 function App() {
-  const [aboutClicked, setAboutClicked] = useState(true);
   const [portfolioClicked, setPortfolioClicked] = useState(false);
   const [projects, setProjects] = useState([
     {
@@ -48,6 +48,7 @@ function App() {
       </header>
       <main className="App">
         {!portfolioClicked ? (<About/>) : (<Portfolio projects={projects}/>)}
+        <Contact/>
       </main>
       <footer>
         <p>Janae Welsh 2022</p>
