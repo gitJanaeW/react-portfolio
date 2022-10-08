@@ -18,6 +18,7 @@ const Portfolio = ({projects}) => {
             </div>
         <div className="portfolios">
             <div className="portfolio-rest">
+                {/* ADD A KEY TO EACH CHILD */}
                 {projects.map((project) => (
                     <div className="portfolio-borders portfolio-small">
                     <a href={project.link} target="_blank" rel="noreferrer">

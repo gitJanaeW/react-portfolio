@@ -5,6 +5,8 @@ import About from './components/About';
 import Portfolio from './components/Portfolio';
 
 function App() {
+  const [aboutClicked, setAboutClicked] = useState(true);
+  const [portfolioClicked, setPortfolioClicked] = useState(false);
   const [projects, setProjects] = useState([
     {
       name: 'Run Buddy',
@@ -39,21 +41,13 @@ function App() {
       technologies: 'HTML / CSS / JavaScript'
     },
   ]);
-
-  const [navLinks, setNavLinks] = useState([
-    {name: 'About Me', textContent: ['Lorem ipsum']},
-    {name: 'Portfolio', textContent: ['Lorem ipsum']},
-    {name: 'Contact', textContent: ['Lorem ipsum']},
-    {name: 'Resume', textContent: ['Lorem ipsum']}
-  ]);
   return (
     <div>
       <header className="App-header">
-        <Nav navLinks={navLinks}/>
+        <Nav setPortfolioClicked={setPortfolioClicked}/>
       </header>
       <main className="App">
-        <About/>
-        <Portfolio projects={projects}/>
+        {!portfolioClicked ? (<About/>) : (<Portfolio projects={projects}/>)}
       </main>
       <footer>
         <p>Janae Welsh 2022</p>
