@@ -1,3 +1,11 @@
+/* color vars */
+:root{
+  --primary-color: rgba(204, 150, 69, 0.8);
+  --secondary-color: rgb(69, 66, 66);
+  --title-color: #EBEBEB;
+  --background: #f0f0f0;
+}
+
 a {
   font-size: larger;
   color: white;
@@ -20,8 +28,108 @@ a {
 
 .body {
   margin: 0 8%;
+}
+
+.text-body {
   font-size: 15pt;
 }
+
+
+/* PORTFOLIO */
+.portfolios {
+  display: flex;
+  justify-content: space-around;
+}
+
+.portfolio-borders{
+  border: 10px solid var(--secondary-color);
+  background-color: var(--title-color);
+  margin: 10px 0 10px 15px;
+  height: 300px;
+}
+
+.portfolio-tools, .portfolio-tools-big{
+  color: var(--title-color);
+  background-color: var(--secondary-color);
+  display: inline-block;
+  padding: 8px;
+  max-width: 23ch;
+}
+
+.h4, .h4-big{
+  font-size: x-large;
+}
+
+.portfolio-tools-big, .h4-big{
+  position: relative;
+  z-index: 2;
+  bottom: 100px;
+  padding-left: 20px;
+}
+
+.portfolio-big{
+  flex-basis: 100%;
+  flex-direction: column;
+  background-size: 150%;
+  height: 400px;
+}
+
+.portfolio-tools, .h4{
+  position: relative;
+  bottom: 100px;
+  padding-left: 10px;
+}
+
+.portfolio-rest{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-rest > *{
+  flex: 1 1 45%;
+}
+
+.portfolio-small{
+  padding: auto 37px auto 37px;
+}
+
+.img-fit, .img-fit-me{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  right: 5px;
+  object-fit: cover;
+  opacity: 35%;
+}
+
+.portfolio-borders-me{
+  margin: 10px auto;
+  border: 10px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  width: 70%;
+  height: 50vh;
+}
+
+.project-info {
+  position: relative;
+  bottom: 30px;
+}
+
+.project-info > * {
+  margin: 10px 0;
+}
+
+/* Styling filter overlay */
+.img-fit:hover{
+  opacity: 100%;
+}
+
+/* footer */
+footer {
+  margin: 130px 0 30px 0;
+  text-align: center;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
