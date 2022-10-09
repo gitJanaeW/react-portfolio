@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import Resume from './components/Resume';
 
 function App() {
   const [portfolioClicked, setPortfolioClicked] = useState(false);
@@ -51,6 +52,7 @@ function App() {
         />
       </header>
       <main className="App">
+        <Resume/>
         <About/>
         {/* create a component called Display and make an array with all of the other sections in it. Render accordingly */}
         {portfolioClicked && (<Portfolio projects={projects}/>)}

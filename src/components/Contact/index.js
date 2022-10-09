@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { validateEmail } from "../../utils/helpers";
+import { captializeFirstChar, validateEmail } from "../../utils/helpers";
 import placeholderHeadshot from '../../assets/placeholder-headshot.png';
 
 const Contact = () => {
@@ -9,16 +9,14 @@ const Contact = () => {
     const getEmailState = (e) => {
         if (e.target.name === 'email') {
             const isValid = validateEmail(e.target.value);
-            if (isValid) {
+            if (!isValid) {
                 setErrorMsg('Your email is invalid');
-                console.log(errorMsg);
             } else {
                 setErrorMsg('');
             }
         } else {
             if (!e.target.value.length) {
-                setErrorMsg(`${!e.target.name} is required`);
-                console.log(errorMsg);
+                setErrorMsg(`${e.target.name} is required.`);
             } else {
                 setErrorMsg('');
             }
@@ -28,7 +26,7 @@ const Contact = () => {
             // value.
             // [e.target.name] refers to the name attribute in the preceeding JSX, meaning when the name, email or message
             // changes, we'll update the target (by its attribute name) with its new value
-            setEmailObj({...emailObj, [e.target.name]: e.target.value});
+            return setEmailObj({...emailObj, [e.target.name]: e.target.value});
         }
     };
     const logEmail = (e) => {
@@ -66,15 +64,16 @@ const Contact = () => {
                     </div>
                     <div className='align'>
                         {/* email */}
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'>Email:</label>
                         <input onBlur={getEmailState} type='email' name='email'/>
                     </div>
                     <div>
                         {/* message */}
                         <label htmlFor='message'>Message</label>
                         <br/>
-                        <textarea onChange={getEmailState} name='message'/>
+                        <textarea onBlur={getEmailState} name='message'/>
                     </div>
+                    {errorMsg && (<p>{captializeFirstChar(errorMsg)}</p>)}
                     <button type='submit'>Send</button>
                 </form>
             </div>
