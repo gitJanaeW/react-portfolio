@@ -34,7 +34,7 @@ const Contact = () => {
         console.log(emailObj);
     };
     return (
-        <section id="contact">
+        <section id="contact" className="body">
             <h1>Reach Out</h1>
             <div className="flex-contact">
                 <div className="quick-info">

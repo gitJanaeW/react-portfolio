@@ -2,11 +2,11 @@ import React from "react";
 
 const Resume = () => {
     return (
-        <section className="body">
+        <section id="resume" className="body">
             <h1>Resume</h1>
-            <div>
-            <h2>SKILLS</h2>
-                <ul>
+            <div className="resume-section">
+                <h2>TECHNOLOGIES</h2>
+                <ul className="tecnhologies">
                     <li className="text-body">HTML</li>
                     <li className="text-body">CSS</li>
                     <li className="text-body">JavaScript</li>
@@ -23,8 +23,8 @@ const Resume = () => {
                     <li className="text-body">Handlebars</li>
                 </ul>
             </div>
-            <div>
-                <h2>Experience</h2>
+            <div className="resume-section">
+                <h2>EXPERIENCE</h2>
                 <ul>
                     <li>
                         <h3>English Tutor & Essay Reviewer</h3>
@@ -56,25 +56,33 @@ const Resume = () => {
                     </li>
                 </ul>
             </div>
-            <div>
-                <h2>Education</h2>
+            <div className="resume-section">
+                <h2>EDUCATION</h2>
                 <ul>
                     <li>
-                        <h3>Carelton University</h3>
-
+                        <h3>Carelton University Full Stack Development Boot Camp</h3>
+                        <p className="text-body">
+                            Developing career-ready proficiency in front-end and back-end development through independent and collaborative projects. Learning relevant languages as well as other assisting technologies
+                        </p>
                     </li>
                     <li>
                         <h3>Ryerson University</h3>
+                        <p className="text-body">
+                            Consistent Dean’s List honoree, achieving a BA in English.
+                        </p>
                     </li>
                     <li>
                         <h3>University of Waterloo</h3>
+                        <p className="text-body">
+                            Consistent Dean’s List honoree specializing in Technical Writing.
+                        </p>
                     </li>
                 </ul>
             </div>
             <div>
-                <h2>References</h2>
+                <h2>REFERENCES</h2>
                 <ul>
-                    <li className="text-body">Available upon request</li>
+                    <li className="text-body">Available upon request.</li>
                 </ul>
             </div>
         </section>
