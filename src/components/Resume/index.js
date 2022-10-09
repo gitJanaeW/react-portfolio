@@ -3,7 +3,10 @@ import React from "react";
 const Resume = () => {
     return (
         <section id="resume" className="body">
-            <h1>Resume</h1>
+            <div className="display-resume">
+                <h1>Resume</h1>
+                    <a href="../../assets/resume.pdf" download="janae-welsh-resume"><button>Download PDF</button></a>
+            </div>
             <div className="display-resume">
             <div className="resume-section resume-child-one">
                     <h2>EXPERIENCE</h2>
