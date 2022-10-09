@@ -1,10 +1,10 @@
 import React from "react";
 
 const Resume = () => {
-    <div>
+    <section>
         <h1>Resume</h1>
-        
-    </div>
+
+    </section>
 };
 
 export default Resume;
