@@ -52,11 +52,11 @@ function App() {
         />
       </header>
       <main className="App">
-        <Resume/>
         <About/>
         {/* create a component called Display and make an array with all of the other sections in it. Render accordingly */}
         {portfolioClicked && (<Portfolio projects={projects}/>)}
         {contactClicked && (<Contact/>)}
+        <Resume/>
       </main>
       <footer>
         <p>Janae Welsh 2022</p>
