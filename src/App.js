@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 
 function App() {
   const [portfolioClicked, setPortfolioClicked] = useState(false);
+  const [contactClicked, setContactClicked] = useState(false);
   const [projects, setProjects] = useState([
     {
       name: 'Run Buddy',
@@ -44,11 +45,16 @@ function App() {
   return (
     <div>
       <header className="App-header">
-        <Nav setPortfolioClicked={setPortfolioClicked}/>
+        <Nav 
+          setPortfolioClicked={setPortfolioClicked}
+          setContactClicked={setContactClicked}
+        />
       </header>
       <main className="App">
-        {!portfolioClicked ? (<About/>) : (<Portfolio projects={projects}/>)}
-        <Contact/>
+        <About/>
+        {/* create a component called Display and make an array with all of the other sections in it. Render accordingly */}
+        {portfolioClicked && (<Portfolio projects={projects}/>)}
+        {contactClicked && (<Contact/>)}
       </main>
       <footer>
         <p>Janae Welsh 2022</p>

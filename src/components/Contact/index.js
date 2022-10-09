@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { validateEmail } from "../../utils/helpers";
 import placeholderHeadshot from '../../assets/placeholder-headshot.png';
 
 const Contact = () => {
+    const [emailObj, setEmailObj] = useState();
+    const [errorMsg, setErrorMsg] = useState();
+    // check for live changes to the state of the form
+    const getEmailState = (e) => {
+        if (e.target.name === 'email') {
+            const isValid = validateEmail(e.target.value);
+            if (isValid) {
+                setErrorMsg('Your email is invalid');
+                console.log(errorMsg);
+            } else {
+                setErrorMsg('');
+            }
+        } else {
+            if (!e.target.value.length) {
+                setErrorMsg(`${!e.target.name} is required`);
+                console.log(errorMsg);
+            } else {
+                setErrorMsg('');
+            }
+        }
+        if(!errorMsg) {
+            // the spread operator ensures we have access to formState as a whole while also singling out each attribute's
+            // value.
+            // [e.target.name] refers to the name attribute in the preceeding JSX, meaning when the name, email or message
+            // changes, we'll update the target (by its attribute name) with its new value
+            setEmailObj({...emailObj, [e.target.name]: e.target.value});
+        }
+    };
+    const logEmail = (e) => {
+        e.preventDefault();
+        console.log(emailObj);
+    };
     return (
         <section className="contact">
             <h1>Reach Out</h1>
@@ -25,22 +58,22 @@ const Contact = () => {
                         </ul>
                 </div>
                     </div>
-                <form>
-                    <div className="align">
+                <form onSubmit={logEmail}>
+                    <div className='align'>
                         {/* name */}
-                        <label htmlFor="name">Name:</label>
-                        <input type='text' name='name'/>
+                        <label htmlFor='name'>Name:</label>
+                        <input onBlur={getEmailState} type='text' name='name'/>
                     </div>
-                    <div className="align">
+                    <div className='align'>
                         {/* email */}
-                        <label htmlFor="email">Email</label>
-                        <input type='email' name='email'/>
+                        <label htmlFor='email'>Email</label>
+                        <input onBlur={getEmailState} type='email' name='email'/>
                     </div>
                     <div>
                         {/* message */}
                         <label htmlFor='message'>Message</label>
                         <br/>
-                        <textarea name='message'/>
+                        <textarea onChange={getEmailState} name='message'/>
                     </div>
                     <button type='submit'>Send</button>
                 </form>
