@@ -10,8 +10,10 @@ import github from './assets/github.png';
 import linkedIn from './assets/linkedIn.png';
 
 function App() {
-  const [portfolioClicked, setPortfolioClicked] = useState(false);
-  const [contactClicked, setContactClicked] = useState(false);
+  let [aboutClicked, setAboutClicked] = useState(false);
+  let [portfolioClicked, setPortfolioClicked] = useState(false);
+  let [contactClicked, setContactClicked] = useState(false);
+  let [resumeClicked, setResumeClicked] = useState(false);
   const [projects, setProjects] = useState([
     {
       name: 'Run Buddy',
@@ -46,20 +48,38 @@ function App() {
       technologies: 'HTML / CSS / JavaScript'
     },
   ]);
+
+  function conditionalRender() {
+    if (portfolioClicked) {
+      contactClicked = resumeClicked = aboutClicked = false;
+      return (<Portfolio projects={projects}/>)
+    } else if (contactClicked) {
+      portfolioClicked = resumeClicked = aboutClicked = false;
+      return (<Contact/>)
+    } else if (resumeClicked) {
+      contactClicked = portfolioClicked = aboutClicked = false;
+      return (<Resume/>)
+    } else {
+      return (<About/>)
+    }
+  }
+
   return (
     <div>
       <header className="App-header">
         <Nav 
+          aboutClicked={aboutClicked}
+          setAboutClicked={setAboutClicked}
+          portfolioClicked={portfolioClicked}
           setPortfolioClicked={setPortfolioClicked}
+          contactClicked={contactClicked}
           setContactClicked={setContactClicked}
+          resumeClicked={resumeClicked}
+          setResumeClicked={setResumeClicked}
         />
       </header>
       <main className="App">
-        <About/>
-        {/* create a component called Display and make an array with all of the other sections in it. Render accordingly */}
-        {portfolioClicked && (<Portfolio projects={projects}/>)}
-        {contactClicked && (<Contact/>)}
-        <Resume/>
+        {conditionalRender()}
       </main>
       <footer>
         <a href="https://github.com/gitJanaeW/" target="_blank" rel="noreferrer">
