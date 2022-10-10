@@ -1,11 +1,14 @@
 import React from "react";
+import resumePDF from "../../assets/resume.pdf";
 
 const Resume = () => {
     return (
         <section id="resume" className="body">
             <div className="display-resume">
                 <h1>Resume</h1>
-                    <a href="../../assets/resume.pdf" download="janae-welsh-resume"><button>Download PDF</button></a>
+                    <a href={resumePDF} download="janae-welsh-resume">
+                        <button>Download PDF</button>
+                    </a>
             </div>
             <div className="display-resume">
             <div className="resume-section resume-child-one">
