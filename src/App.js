@@ -51,15 +51,20 @@ function App() {
 
   function conditionalRender() {
     if (portfolioClicked) {
-      contactClicked = resumeClicked = aboutClicked = false;
+      console.log("PORTFOLIO TRUE")
+      console.log("contact, resume, about:", contactClicked, resumeClicked, aboutClicked)
       return (<Portfolio projects={projects}/>)
     } else if (contactClicked) {
-      portfolioClicked = resumeClicked = aboutClicked = false;
+      console.log("CONTACT TRUE")
+      console.log("portfolio, resume, about:", portfolioClicked, resumeClicked, aboutClicked)
       return (<Contact/>)
     } else if (resumeClicked) {
-      contactClicked = portfolioClicked = aboutClicked = false;
+      console.log("RESUME TRUE")
+      console.log("contact, portfolio, about:", contactClicked, portfolioClicked, aboutClicked)
       return (<Resume/>)
     } else {
+      console.log("ABOUT TRUE")
+      console.log("portfolio, contact, resume:", portfolioClicked, contactClicked, resumeClicked)
       return (<About/>)
     }
   }
