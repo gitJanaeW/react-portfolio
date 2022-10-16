@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
@@ -10,10 +11,6 @@ import github from './assets/github.png';
 import linkedIn from './assets/linkedIn.png';
 
 function App() {
-  let [aboutClicked, setAboutClicked] = useState(false);
-  let [portfolioClicked, setPortfolioClicked] = useState(false);
-  let [contactClicked, setContactClicked] = useState(false);
-  let [resumeClicked, setResumeClicked] = useState(false);
   const [projects, setProjects] = useState([
     {
       name: 'Run Buddy',
@@ -49,42 +46,20 @@ function App() {
     },
   ]);
 
-  function conditionalRender() {
-    if (portfolioClicked) {
-      console.log("PORTFOLIO TRUE")
-      console.log("contact, resume, about:", contactClicked, resumeClicked, aboutClicked)
-      return (<Portfolio projects={projects}/>)
-    } else if (contactClicked) {
-      console.log("CONTACT TRUE")
-      console.log("portfolio, resume, about:", portfolioClicked, resumeClicked, aboutClicked)
-      return (<Contact/>)
-    } else if (resumeClicked) {
-      console.log("RESUME TRUE")
-      console.log("contact, portfolio, about:", contactClicked, portfolioClicked, aboutClicked)
-      return (<Resume/>)
-    } else {
-      console.log("ABOUT TRUE")
-      console.log("portfolio, contact, resume:", portfolioClicked, contactClicked, resumeClicked)
-      return (<About/>)
-    }
-  }
-
   return (
     <div>
       <header className="App-header">
-        <Nav 
-          aboutClicked={aboutClicked}
-          setAboutClicked={setAboutClicked}
-          portfolioClicked={portfolioClicked}
-          setPortfolioClicked={setPortfolioClicked}
-          contactClicked={contactClicked}
-          setContactClicked={setContactClicked}
-          resumeClicked={resumeClicked}
-          setResumeClicked={setResumeClicked}
-        />
+        <Nav/>
       </header>
       <main className="App">
-        {conditionalRender()}
+        <Router>
+          <Routes>
+            <Route path="/" element={<About/>}/>
+            <Route path="/portfolio" element={<Portfolio/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/resume" element={<Resume/>}/>
+          </Routes>
+        </Router>
       </main>
       <footer>
         <a href="https://github.com/gitJanaeW/" target="_blank" rel="noreferrer">
@@ -96,7 +71,7 @@ function App() {
         <a href="mailto: janae.wel@gmail.com" target="blank">
           <img  style={{width: "6%"}} src={email} alt="Letter icon in black, symbolizing mail"/>
         </a>
-        <p>Janae Welsh 2022</p>
+        <p>Janae Welsh &copy;2022</p>
       </footer>
     </div>
   );
