@@ -50,7 +50,8 @@ function App() {
   return (
     <div>
       <header className="App-header">
-      {/* <Router>
+        <Router>
+          <Nav/>
           <Routes>
             <Route path="/" element={<About/>}/>
             <Route path="/portfolio" element={<Portfolio/>}/>
@@ -58,31 +59,8 @@ function App() {
             <Route path="/resume" element={<Resume/>}/>
           </Routes>
         </Router>
-        <div>
-            <div className="navbar">
-                <Router>
-                  <Link to="/"><h1 className="janaeWelsh">JANAE WELSH</h1></Link>
-                  <Link to="/about"><p data-testid="about">About Me</p></Link>
-                  <Link to="/portfolio"><p data-testid="portfolio">Portfolio</p></Link>
-                  <Link to="/contact"><p data-testid="contact">Contact</p></Link>
-                  <Link to="/resume"><p data-testid="resume">Resume</p></Link>
-              </Router>
-            </div>
-        </div> */}
       </header>
       <main className="App">
-
-      <main className="App">
-        <Router>
-        <Nav/>
-          <Routes>
-            <Route path="/" element={<About/>}/>
-            <Route path="/portfolio" element={<Portfolio/>}/>
-            <Route path="/contact" element={<Contact/>}/>
-            <Route path="/resume" element={<Resume/>}/>
-          </Routes>
-        </Router>
-      </main>
       </main>
       <footer>
         <a href="https://github.com/gitJanaeW/" target="_blank" rel="noreferrer">
