@@ -1,9 +1,11 @@
 /* color vars */
 :root{
-  --primary-color: rgba(204, 150, 69, 0.8);
-  --secondary-color: rgb(69, 66, 66);
-  --title-color: #EBEBEB;
-  --background: #f0f0f0;
+  --primary-color: #566473;
+  --secondary-color: #ecf0f1;
+}
+
+body {
+  background-color: var(--secondary-color);
 }
 
 /* general */
@@ -24,16 +26,23 @@ li {
 a {
   font-size: larger;
   text-decoration: none;
-  padding: 3px 5px;
+  margin: 0;
+  padding: 0;
 }
 
 /* NAVBAR */
-.navbar{
+.navbar {
   min-height: 85px;
+  display: flex;
+  justify-content: space-around; 
+  align-items: flex-end;
+  top: 0;
+  padding: 4px 0 9px 0;
+  background-color: var(--primary-color);
 }
 
 .navbar > a {
-  color: white;
+  color: var(--secondary-color);
   padding: 5px;
 }
 
@@ -43,19 +52,8 @@ a {
   position: relative;
   top: 4px;
   padding: 5px 8px;
-  color: black;
-  background-color: white;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-around; 
-  align-items: flex-end;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  padding: 4px 0 9px 0;
-  background-color: black;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .janaeWelsh {
@@ -83,6 +81,10 @@ a {
   background-color: var(--title-color);
   margin: 10px 0 10px 15px;
   height: 300px;
+}
+
+.portfolio-borders a {
+  padding: 3px 5px;
 }
 
 .portfolio-tools, .portfolio-tools-big{
