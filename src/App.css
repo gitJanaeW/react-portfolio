@@ -6,7 +6,7 @@
   --background: #f0f0f0;
 }
 
-
+/* general */
 h1 {
   font-size: 22pt;
 }
@@ -27,8 +27,24 @@ a {
   padding: 3px 5px;
 }
 
+/* NAVBAR */
+.navbar{
+  min-height: 85px;
+}
+
 .navbar > a {
   color: white;
+  padding: 5px;
+}
+
+.selected {
+  transition: all .3s ease;
+  background-position: 100% 100%;
+  position: relative;
+  top: 4px;
+  padding: 5px 8px;
+  color: black;
+  background-color: white;
 }
 
 .navbar {
@@ -215,6 +231,7 @@ button {
 .display-resume {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
