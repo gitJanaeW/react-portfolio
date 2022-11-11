@@ -64,5 +64,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-// WHAT'S NOT WORKING:

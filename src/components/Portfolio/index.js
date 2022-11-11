@@ -41,6 +41,7 @@ const Portfolio = () => {
       ]);
     return (
         <section id="portfolio" className="section-content body text-body">
+            
             <h1>My Portfolio</h1>
             <div className="portfolio-big portfolio-borders">
                 <div className="overlay"></div>

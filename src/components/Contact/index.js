@@ -29,6 +29,9 @@ const Contact = () => {
             return setEmailObj({...emailObj, [e.target.name]: e.target.value});
         }
     };
+    const sendEmail = () => {
+        
+    }
     const logEmail = (e) => {
         e.preventDefault();
         console.log(emailObj);
@@ -60,18 +63,18 @@ const Contact = () => {
                     <div className='align'>
                         {/* name */}
                         <label htmlFor='name'>Name:</label>
-                        <input onBlur={getEmailState} type='text' name='name'/>
+                        <input id='name' onBlur={getEmailState} type='text' name='name' placeholder='Your Name'/>
                     </div>
                     <div className='align'>
                         {/* email */}
                         <label htmlFor='email'>Email:</label>
-                        <input onBlur={getEmailState} type='email' name='email'/>
+                        <input id='email' onBlur={getEmailState} type='email' name='email' placeholder='Your Email'/>
                     </div>
                     <div>
                         {/* message */}
                         <label htmlFor='message'>Message</label>
                         <br/>
-                        <textarea onBlur={getEmailState} name='message'/>
+                        <textarea id='message' onBlur={getEmailState} name='message'/>
                     </div>
                     {errorMsg && (<p>{captializeFirstChar(errorMsg)}</p>)}
                     <button type='submit'>Send</button>
