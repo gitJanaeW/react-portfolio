@@ -3,69 +3,69 @@ import React, {useState} from "react";
 const Portfolio = () => {
     const [projects, setProjects] = useState([
         {
-          key: "run-buddy",
-          name: 'Run Buddy',
-          link: 'https://gitjanaew.github.io/run-buddy/',
-          // Image sourced from: https://www.womensrunning.com/culture/10-telltale-signs-runner/
-          img: 'https://www.womensrunning.com/wp-content/uploads/2017/02/youre-a-runner.jpg',
-          imgAlt: "A woman squatting to tie her sneaker's shoelace",
-          technologies: 'HTML / CSS / JavaScript'
+          key: "poachd",
+          name: 'Poachd',
+          link: 'https://github.com/gitJanaeW/poach',
+          img: '../images/poachd.png',
+          imgAlt: "The landing page of Poachd",
+          technologies: 'MERN | Reddis | Stripe',
+          status: "In Development"
         },
         {
-          key: "rock-paper-scissors",
-          name: 'Rock, Paper, Scissors',
+          key: "rescue-chow",
+          name: 'Rescue Chow',
+          link: '',
+          img: '../images/rescue-chow.png',
+          imgAlt: "The landing page of Rescue Chow",
+          technologies: 'Mongoose | Express | React',
+          status: "Deployed"
+        },
+        {
+          key: "upgrad",
+          name: 'upGrad',
           link: '/',
           // Image sourced from: cdn.lifehack.org
           img: 'https://cdn.lifehack.org/wp-content/uploads/2015/01/Researchers-Tell-Us-The-Strategies-To-Win-Rock-Paper-Scissors1.jpg',
-          imgAlt: "",
-          technologies: 'HTML / CSS / JavaScript'
+          imgAlt: "The landing page of upGrad",
+          technologies: 'Express | Sequelize | Handlebars',
+          status: "Deployed"
         },
         {
-          key: "placeholder0",
-          name: 'Placeholder',
+          key: "showgo",
+          name: 'ShowGo',
           link: '/',
-          // Image is sourced from Kelly Sikkema: https://unsplash.com/photos/YXWoEn5uOvg
-          img: 'https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-          imgAlt: "",
-          technologies: 'HTML / CSS / JavaScript'
+          img: '../images/showgo.png',
+          imgAlt: "The landing page of ShowGo",
+          technologies: 'HTML | CSS | JavaScript',
+          status: "Downloadable"
         },
-        {
-          key: "placeholder1",
-          name: 'Placeholder',
-          link: 'https://gitjanaew.github.io/run-buddy/',
-          // Image is sourced from Markus Spiske: https://unsplash.com/photos/vTySY3VscUc
-          img: 'https://images.unsplash.com/photo-1654235444180-4d057b605b32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-          imgAlt: "",
-          technologies: 'HTML / CSS / JavaScript'
-        },
-      ]);
+    ]);
     return (
-        <section id="portfolio" className="section-content body text-body">
-            
-            <h1>My Portfolio</h1>
-            <div className="portfolio-big portfolio-borders">
-                <div className="overlay"></div>
-                <a href="https://gitjanaew.github.io/shakespeare-sonnet-scrambler/" target="_blank" rel="noreferrer">
-                    {/* <!-- Img sourced in "src" below --> */}
-                    <img className="img-fit" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/C9F6/production/_118720715_gettyimages-51246880.jpg"
-                    alt="A painting of Shakespeare with his hand resting on the side of his face"/>
-                </a>
-                <div className="project-info">
-                    <h4 className="h4-big">Shakespeare Sonnet Scambler</h4>
-                    <p className="portfolio-tools-big">HTML / CSS / Javascript</p>
-                </div>
-            </div>
-            <div className="portfolios">
-                <div className="portfolio-rest">
+        <section id="portfolio" className="bg-gray-900 py-10 px-10 md:px-20 lg:px-40">
+            <h2 className="text-3xl text-white my-6 ml-3 font-medium">
+              Portfolio
+            </h2>
+            <div className="mx-4 mt-8">
+                <div className="flex flex-col gap-10 py-10 flex-wrap">
                     {projects.map((project) => (
-                        <div className="portfolio-borders portfolio-small" key={project.key}>
+                        <div className="flex flex-col space-y-4" key={project.key}>
                             <a href={project.link} target="_blank" rel="noreferrer">
-                                <img className="img-fit" src={project.img}
+                                <img className="object-cover rounded-xl w-full" src={project.img}
                                 alt={project.imgAlt}/>
                             </a>
-                            <div className="project-info">
-                                <h4 className="h4">{project.name}</h4>
-                                <p className="portfolio-tools">{project.technologies}</p>
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <div className="flex max-sm:flex-col mt-1">
+                                        <a href={project.link} target="_blank" rel="noreferrer">
+                                            <h2 className="text-2xl mr-2 text-white">{project.name}</h2>
+                                        </a>
+                                        <h3 className="text-sm text-center py-1 px-3 relative max-sm:top-2 rounded-full text-white bg-gradient-to-r from-cyan-500 text- to-teal-500">
+                                            {project.status}
+                                        </h3>
+                                    </div>
+                                    <p className="text-slate-400 pt-2 text-lg">{project.technologies}</p>
+                                </div>
+                                <svg sidebar-toggle-item="true" className="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                             </div>
                         </div>
                     ))}
