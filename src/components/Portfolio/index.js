@@ -59,7 +59,7 @@ const Portfolio = () => {
                                         <a href={project.link} target="_blank" rel="noreferrer">
                                             <h2 className="text-2xl max-sm:text-lg max-sm:font-medium mr-2 text-white">{project.name}</h2>
                                         </a>
-                                        <h3 className="text-sm text-center py-1 px-3 relative max-sm:top-2 rounded-full text-white bg-gradient-to-r from-cyan-500 text- to-teal-500">
+                                        <h3 className="w-fit text-sm text-center flex-none p-1 px-2 rounded-full text-white bg-gradient-to-r from-cyan-500 text- to-teal-500">
                                             {project.status}
                                         </h3>
                                     </div>
