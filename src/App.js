@@ -26,17 +26,21 @@ function App() {
       </header>
       <main className="App">
       </main>
-      <footer>
-        <a href="https://github.com/gitJanaeW/" target="_blank" rel="noreferrer">
-          <img style={{width: "6%"}} src={github} alt="Github logo in black"/>
-        </a>
-        <a href='https://www.linkedin.com/in/janae-welsh-01a52a23a/' target="_blank" rel="noreferrer">
-          <img style={{width: "6%"}} src={linkedIn} alt="LinkedIn logo in black"/>
-        </a>
-        <a href="mailto: janae.wel@gmail.com" target="blank">
-          <img  style={{width: "6%"}} src={email} alt="Letter icon in black, symbolizing mail"/>
-        </a>
-        <p>Janae Welsh &copy;2022</p>
+      <footer className="p-5 pt-10 bg-gray-900 text-white max-sm:text-sm">
+        <div className="flex justify-center">
+          <a href="https://github.com/gitJanaeW/" target="_blank" rel="noreferrer">
+            <img className="w-7 mx-3" src={github} alt="Github logo in black"/>
+          </a>
+          <a href='https://www.linkedin.com/in/janae-welsh-01a52a23a/' target="_blank" rel="noreferrer">
+            <img className="w-7 mx-3" src={linkedIn} alt="LinkedIn logo in black"/>
+          </a>
+          <a href="mailto: janae.wel@gmail.com" target="blank">
+            <img className="w-7 mx-3"  src={email} alt="Letter icon in black, symbolizing mail"/>
+          </a>
+        </div>
+        <div className="text-center mt-4">
+          <p>Copyright &copy;2022 Powered by gitJanaeW</p>
+        </div>
       </footer>
     </div>
   );

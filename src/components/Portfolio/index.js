@@ -41,12 +41,12 @@ const Portfolio = () => {
         },
     ]);
     return (
-        <section id="portfolio" className="bg-gray-900 py-10 px-10 md:px-20 lg:px-40">
-            <h2 className="text-3xl text-white my-6 ml-3 font-medium">
+        <section id="portfolio" className="bg-gray-900 px-10 md:px-20 lg:px-40">
+            <h2 className="text-3xl text-white ml-3 font-medium">
               Portfolio
             </h2>
-            <div className="mx-4 mt-8">
-                <div className="flex flex-col gap-10 py-10 flex-wrap">
+            <div className="mx-4">
+                <div className="flex flex-col gap-10 pt-4 pb-10 flex-wrap">
                     {projects.map((project) => (
                         <div className="flex flex-col space-y-4" key={project.key}>
                             <a href={project.link} target="_blank" rel="noreferrer">
@@ -57,7 +57,7 @@ const Portfolio = () => {
                                 <div>
                                     <div className="flex max-sm:flex-col mt-1">
                                         <a href={project.link} target="_blank" rel="noreferrer">
-                                            <h2 className="text-2xl mr-2 text-white">{project.name}</h2>
+                                            <h2 className="text-2xl max-sm:text-lg max-sm:font-medium mr-2 text-white">{project.name}</h2>
                                         </a>
                                         <h3 className="text-sm text-center py-1 px-3 relative max-sm:top-2 rounded-full text-white bg-gradient-to-r from-cyan-500 text- to-teal-500">
                                             {project.status}
