@@ -42,10 +42,12 @@ const Contact = () => {
     return (
         <section id="contact" className="flex flex-wrap bg-gray-900 text-white px-10">
             <div className="w-1/2 max-lg:w-full">
-                <h2 className="text-5xl md:text-6xl max-sm:text-center text-teal-400 py-2 font-medium">
+                <h2 className="text-3xl md:text-6xl max-sm:text-center text-teal-400 py-2 font-medium">
                     Reach Out
                 </h2>
-                <p className="text-xl max-sm:text-base max-sm:text-center md:my-5">Contact me to speak to me further about how I can be an asset to your junior development team.</p>
+                <p className="text-xl max-sm:text-base max-sm:text-center md:my-5">
+                    I'm eager to become a strong asset to your team of junior developers! Reach out to me on whatever platform is most convenient and I will be happy to connect with you.
+                </p>
                 <div className="flex justify-between ">     
                     <div className="text-white text-lg mt-5 max-sm:text-base">
                         <div className="flex items-center md:mb-5">
@@ -69,25 +71,25 @@ const Contact = () => {
             </div>
             <form className="w-1/2 max-lg:w-full max-lg:px-0 max-lg:pt-15 rounded-lg p-8 bg-gray-900 text-white" onSubmit={logEmail}>
                     <div>
-                        <label htmlFor='name' className="uppercase text-sm font-bold">Full Name:</label>
+                        <label htmlFor='name' className="text-sm font-bold">FULL NAME:</label>
                         <input id='name' onBlur={getEmailState} type='text' name='name'
                             className="w-full bg-gray-600 mt-2 p-3 max-sm:p-2 rounded-lg focus:outline-none focus:shadow-outline"/>
                     </div>
                     <div className="mt-8">
-                        <label htmlFor='email' className="uppercase text-sm font-bold">Email:</label>
+                        <label htmlFor='email' className="text-sm font-bold">EMAIL:</label>
                         <input id='email' onBlur={getEmailState} type='email' name='email'
                             className="w-full bg-gray-600 mt-2 p-3 max-sm:p-2 rounded-lg focus:outline-none focus:shadow-outline"/>
                     </div>
                     <div className="mt-8">
-                        <label htmlFor='message' className="uppercase text-sm font-bold">Message</label>
+                        <label htmlFor='message' className="text-sm font-bold">MESSAGE</label>
                         <textarea id='message' onBlur={getEmailState} name='message'
                             className="w-full h-32 bg-gray-600 mt-2 p-3 max-sm:p-2 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                     </div>
                     {errorMsg && (<p className="ml-1 mb-8">{captializeFirstChar(errorMsg)}</p>)}
                     <div className="mt-8">
                         <button type="submit"
-                        className="uppercase text-sm font-bold tracking-wide bg-gradient-to-r from-cyan-500 text- to-teal-500 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
-                        Send
+                        className="text-sm font-bold tracking-wide bg-gradient-to-r from-cyan-500 text- to-teal-500 p-3 rounded-lg w-full">
+                        SEND
                         </button>
                     </div>
             </form>

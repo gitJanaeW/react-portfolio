@@ -44,7 +44,7 @@ const Nav = () => {
         }
     }
     return (
-        <nav className="bg-gray-900 sticky top-0 px-6" onClick={toggleNav}>
+        <nav className="bg-gray-900 sticky top-0 z-10 px-6" onClick={toggleNav}>
             <div className="relative max-md:flex max-md:justify-between">
                 <div className="flex items-center justify-between">
                     <div className="mr-auto">
@@ -54,16 +54,16 @@ const Nav = () => {
                     </div>
                     <div className="md:flex hidden items-center gap-10">
                         <Link to="/">
-                            <p className={`${clickedAbout && "selected"} text-white px-2`}>ABOUT ME</p>
+                            <p className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>ABOUT ME</p>
                         </Link>
                         <Link to="/portfolio">
-                            <p className={`${clickedPortfolio && "selected"} text-white px-2`}>PORTFOLIO</p>
+                            <p className={`${clickedPortfolio && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>PORTFOLIO</p>
                         </Link>
                         <Link to="/contact">
-                            <p className={`${clickedContact && "selected"} text-white px-2`}>CONTACT</p>
+                            <p className={`${clickedContact && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>CONTACT</p>
                         </Link>
                         <Link to="/resume">
-                            <p className={`${clickedResume && "selected"} text-white px-2`}>RESUME</p>
+                            <p className={`${clickedResume && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>RESUME</p>
                         </Link> 
                     </div>      
                 </div>
@@ -78,7 +78,7 @@ const Nav = () => {
             </div>
             {/* Mobile nav */}
             <div className={`
-                md:hidden bg-gray-900 fixed w-full h-32 top-0 overflow-y-auto bottom-0 mt-12
+                md:hidden bg-gray-900 fixed w-full h-28 top-0 overflow-y-auto bottom-0 mt-12
                 duration-500 ${navOpen ? "top-5" : "top-[-100%]"}
             `}>
                 <Link to="/">
