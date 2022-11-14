@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { captializeFirstChar, validateEmail } from "../../utils/helpers";
-import placeholderHeadshot from '../../assets/placeholder-headshot.png';
+import nodemailerSend from "../../utils/nodemailerSend";
 import {AiFillPhone, AiFillGithub} from 'react-icons/ai';
 import {MdEmail} from 'react-icons/md';
 import {FaLinkedinIn} from 'react-icons/fa';
@@ -92,6 +92,9 @@ const Contact = () => {
                         SEND
                         </button>
                     </div>
+                    <button className="mt-8 text-sm font-bold tracking-wide bg-gradient-to-r from-cyan-500 text- to-teal-500 p-3 rounded-lg w-full">>
+                        Test Send
+                    </button>
             </form>
         </section>
     );

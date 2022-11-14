@@ -11,28 +11,27 @@ const Nav = () => {
     const [navOpen, setNavOpen] = useState(false);
     const toggleNav = (e) => {
         e.preventDefault();
-        // const selected = document.getElementsByClassName('selected');
         console.log(e.target.innerHTML);
         switch (e.target.innerHTML) {
-            case "About Me":
+            case "ABOUT ME":
                 setAbout(true);
                 setPortfolio(false);
                 setResume(false);
                 setContact(false);
                 break;
-            case "Portfolio":
+            case "PORTFOLIO":
                 setAbout(false);
                 setPortfolio(true);
                 setResume(false);
                 setContact(false);
                 break;
-            case "Contact":
+            case "CONTACT":
                 setAbout(false);
                 setPortfolio(false);
                 setResume(false);
                 setContact(true);
                 break;
-            case "Resume":
+            case "RESUME":
                 setAbout(false);
                 setPortfolio(false);
                 setResume(true);
@@ -81,22 +80,24 @@ const Nav = () => {
                 duration-500 z-5 ${navOpen ? "top-5" : "top-[-100%]"}`}>
                 <Link to="/">
                     <div>
-                        <span className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"}
-                        text-white px-2 mb-2`}>ABOUT ME</span>
+                    <span className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>ABOUT ME</span>
                     </div>
                 </Link>
                 <Link to="/portfolio">
-                    <div><span className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"}
-                    text-white px-2 mb-2`}>PORTFOLIO</span></div>
+                <div>
+                    <span className={`${clickedPortfolio && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>PORTFOLIO</span>
+                </div>
                 </Link>
                 <Link to="/contact">
-                    <div><span className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"}
-                    text-white px-2 mb-2`}>CONTACT</span></div>
+                <div>
+                    <span className={`${clickedContact && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>CONTACT</span>
+                </div>
                 </Link>
                 <Link to="/resume">
-                    <div><span className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"}
-                    text-white px-2 mb-2`}>RESUME</span></div>
-                </Link>
+                <div>
+                    <span className={`${clickedResume && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"} text-white px-2`}>RESUME</span>
+                </div>
+                </Link> 
             </div>
         </div>
     </nav>
