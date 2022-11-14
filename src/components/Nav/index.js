@@ -45,7 +45,7 @@ const Nav = () => {
     }
     return (
         <nav className="bg-gray-900 sticky top-0 z-10 px-6" onClick={toggleNav}>
-            <div className="relative max-md:flex max-md:justify-between">
+            <div className="relative z-9 max-md:flex max-md:justify-between">
                 <div className="flex items-center justify-between">
                     <div className="mr-auto">
                         <Link to="/">
@@ -67,9 +67,9 @@ const Nav = () => {
                         </Link> 
                     </div>      
                 </div>
-                <div className="flex items-center justify-around font-medium">
-                    <div className="py-4 max-md:ml-auto flex justify-between">
-                    <div className="text-3xl md:hidden" onClick={() => setNavOpen(!navOpen)}>
+                <div className="flex items-center justify-around font-medium md:absolute md:top-0 z-2">
+                    <div className="py-4 max-md:ml-auto flex justify-between z-3">
+                    <div className="text-3xl md:hidden z-4" onClick={() => setNavOpen(!navOpen)}>
                         {navOpen ? 
                             <AiOutlineClose color="white"/> 
                             : <GiHamburgerMenu color="white"/>}
@@ -77,10 +77,8 @@ const Nav = () => {
                 </div>
             </div>
             {/* Mobile nav */}
-            <div className={`
-                md:hidden bg-gray-900 fixed w-full h-28 top-0 overflow-y-auto bottom-0 mt-12
-                duration-500 ${navOpen ? "top-5" : "top-[-100%]"}
-            `}>
+            <div className={`md:hidden bg-gray-900 fixed w-full h-28 top-0 overflow-y-auto bottom-0 mt-12
+                duration-500 z-5 ${navOpen ? "top-5" : "top-[-100%]"}`}>
                 <Link to="/">
                     <div>
                         <span className={`${clickedAbout && "transition-all ease-in duration-300 bg-gradient-to-r from-cyan-500 text- to-teal-500"}

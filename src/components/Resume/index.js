@@ -4,10 +4,10 @@ import {IoMdDownload} from 'react-icons/io';
 
 const Resume = () => {
     return (
-        <section id="resume" className="bg-gray-900 text-white px-10">
+        <section id="resume" className="bg-gray-900 text-white px-10 lg:px-32">
             <div>
                 <div className="flex max-sm:flex-wrap justify-between items-center mb-8">
-                    <h1 className="text-5xl md:text-6xl max-sm:max-sm:text-2xl">Resume</h1>
+                    <h1 className="text-3xl md:text-5xl text-teal-300">Resume</h1>
                     <a href={resumePDF} download="janae-welsh-resume"
                         className="w-fit h-fit text-sm font-bold tracking-wide bg-gradient-to-r from-cyan-500 text- to-teal-500 p-2 md:p-3 rounded-lg">
                         <IoMdDownload/>

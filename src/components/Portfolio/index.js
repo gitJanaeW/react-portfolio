@@ -42,7 +42,7 @@ const Portfolio = () => {
     ]);
     return (
         <section id="portfolio" className="bg-gray-900 px-10 md:px-20 lg:px-40">
-            <h2 className="text-3xl text-white ml-3">
+            <h2 className="ml-4 lg:ml-2 text-3xl md:text-6xl text-teal-400 py-2 font-medium">
               Portfolio
             </h2>
             <div className="mx-4">

@@ -42,7 +42,7 @@ const Contact = () => {
     return (
         <section id="contact" className="flex flex-wrap bg-gray-900 text-white px-10">
             <div className="w-1/2 max-lg:w-full">
-                <h2 className="text-3xl md:text-6xl max-sm:text-center text-teal-400 py-2 font-medium">
+                <h2 className="text-center md:text-left text-2xl md:text-6xl text-teal-400 py-2 font-medium">
                     Reach Out
                 </h2>
                 <p className="text-xl max-sm:text-base max-sm:text-center md:my-5">
